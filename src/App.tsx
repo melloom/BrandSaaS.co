@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import toast, { Toaster } from 'react-hot-toast'
-import jsPDF from 'jspdf'
 import './App.css'
 
 interface GeneratedName {
@@ -144,8 +143,8 @@ function App() {
   const [keyword, setKeyword] = useState('')
   const [nameLength, setNameLength] = useState<'short' | 'medium' | 'long'>('medium')
   const [nameStyle, setNameStyle] = useState<'modern' | 'classic' | 'invented' | 'compound'>('modern')
-  const [showFavorites, setShowFavorites] = useState(false)
-  const [showTakenDomains, setShowTakenDomains] = useState(false)
+  // const [showFavorites, setShowFavorites] = useState(false)
+  // const [showTakenDomains, setShowTakenDomains] = useState(false)
   const [nameTone, setNameTone] = useState<'professional' | 'creative' | 'friendly' | 'tech'>('professional')
   const [targetAudience, setTargetAudience] = useState<'startups' | 'enterprise' | 'small-business' | 'freelancers'>('startups')
   const [searchDomain, setSearchDomain] = useState('')
@@ -597,15 +596,15 @@ function App() {
     URL.revokeObjectURL(url)
   }
 
-  const clearHistory = () => {
-    setAppState(prev => ({
-      ...prev,
-      generatedNames: [],
-      favorites: [],
-      archivedNames: []
-    }))
-    toast.success('History cleared!')
-  }
+  // const clearHistory = () => {
+  //   setAppState(prev => ({
+  //     ...prev,
+  //     generatedNames: [],
+  //     favorites: [],
+  //     archivedNames: []
+  //   }))
+  //   toast.success('History cleared!')
+  // }
 
   const toggleDarkMode = () => {
     setAppState(prev => ({
@@ -649,8 +648,8 @@ function App() {
 
   const displayedNames = getFilteredNames();
 
-  const availableCount = appState.generatedNames.filter(name => (name.domains?.['.com'] || 'unknown') === 'available').length
-  const takenCount = appState.generatedNames.filter(name => (name.domains?.['.com'] || 'unknown') === 'taken').length
+  // const availableCount = appState.generatedNames.filter(name => (name.domains?.['.com'] || 'unknown') === 'available').length
+  // const takenCount = appState.generatedNames.filter(name => (name.domains?.['.com'] || 'unknown') === 'taken').length
 
   const archiveName = (nameId: string) => {
     setAppState(prev => ({
@@ -675,8 +674,8 @@ function App() {
     setShowRegistrarModal(true);
   }
 
-  const openRegistrar = (registrarUrl: string, registrarName: string) => {
-    const newWindow = window.open(registrarUrl, '_blank');
+  const openRegistrar = (_registrarUrl: string, registrarName: string) => {
+    // const newWindow = window.open(registrarUrl, '_blank');
     toast.success(`Opening ${selectedDomain} on ${registrarName}! 🛒`);
     setShowRegistrarModal(false);
   }
@@ -1357,7 +1356,7 @@ function App() {
                     description: 'Clean & simple domain management',
                     color: '#ff6b6b'
                   }
-                ].map((registrar, index) => (
+                ].map((registrar, _index) => (
                   <div key={registrar.name} className="registrar-item">
                     <div className="registrar-info">
                       <div className="registrar-icon" style={{ backgroundColor: registrar.color }}>
