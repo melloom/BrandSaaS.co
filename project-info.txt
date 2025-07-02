@@ -1,0 +1,30 @@
+Project Title:
+BrandSaaS
+
+Short Description:
+A modern, AI-powered SaaS Name Generator with domain checking, favorites, export, and more. Built with React, Vite, and TypeScript.
+
+Project Overview:
+BrandSaaS is a web application that helps entrepreneurs, startups, and businesses generate creative, brandable SaaS names powered by AI. It checks domain availability in real-time, allows users to favorite and export names, and provides a seamless, modern user experience. The app is designed for speed, usability, and flexibility, making it easy to brainstorm and secure the perfect name for your next SaaS venture.
+
+Key Features:
+- AI-powered SaaS name generation using Cohere API
+- Real-time domain availability checking (.com, .io, .co, .ai, etc.)
+- Favorites system for saving the best names
+- Export options: CSV, TXT, PDF
+- Name rating and comments
+- Dark mode support
+- Advanced filters (length, style, tone, audience)
+- Archive and restore generated names
+- Responsive, mobile-friendly design
+
+Technical Stack:
+React, Vite, TypeScript, Cohere API, Netlify, CSS Modules
+
+Project Image:
+Supports: JPG, PNG, GIF (Max 5MB)
+(Drag & drop an image here or click to browse)
+
+Project Links:
+GitHub Repository: https://github.com/melloom/BrandSaaS.co
+Live Website: https://brandsaas.netlify.app 
